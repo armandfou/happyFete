@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+{{ parent() }}
+	 <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block title %} SOIR&Eacute;ES, Clubs, Bars And Co{% endblock %}  
+{% block body %}
+<header>
+  <span id='title'>HappyFete</span>
+  <span id="dateJ">Soir&eacute;e du {{ "now" | date("d/m/Y") }}</span>
+</header>
+<div class='ctt'>
+    {% for party in parties  %}
+    <div class='onefete'>
+        <img src="img/imgfete/{{party.picture}}"></img>
+        <div class="partyname">{{ party.name }}</div>
+        <div class="partylieu">{{ party.lieu }}</div>
+    </div>
+    {% endfor  %}
+</div>
+{% endblock %}
+
+
